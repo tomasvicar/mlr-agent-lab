@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3ed">
+  <meta name="description" content="Prohlédněte si 3D model dřevěné otočné židle vytvořený podle fotografie. Otáčení, detaily a model ke stažení.">
+  <title>Židle / Studie v pohybu</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Crect width='80' height='80' rx='20' fill='%23ba482c'/%3E%3Cpath d='M22 45h29V15M36 45v17m-15 4 15-4 16 4' fill='none' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="vendor/model-viewer.min.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <a class="wordmark" href="./" aria-label="Židle — úvod"><span class="mark">ž</span> Objekt / 001</a>
+    <span class="header-note">Z fotografie do prostoru</span>
+    <a href="#soubory" class="header-link">Stáhnout model <span aria-hidden="true">↗</span></a>
+  </header>
+  <main>
+    <section class="showcase" aria-labelledby="title">
+      <div class="intro">
+        <p class="eyebrow"><span></span> Studie dřevěné židle</p>
+        <h1 id="title">Jeden tvar.<br>Každý <em>úhel.</em></h1>
+        <p class="lead">Plynulá křivka překližky, kovová podnož a pět párů koleček. Prozkoumejte známý předmět v novém rozměru.</p>
+        <div class="material-key"><span class="wood-dot"></span><div><strong>Dřevo & kov</strong><small>Digitální model podle fotografie</small></div></div>
+        <a href="#detaily" class="detail-link">O modelu <span aria-hidden="true">↓</span></a>
+        <p class="edition">01 — Prostorová studie <span>2026</span></p>
+      </div>
+      <div class="stage" id="stage">
+        <div class="stage-top"><span class="tag">Interaktivní 3D</span><span id="load-status" role="status" aria-live="polite">Načítání modelu…</span></div>
+        <span class="stage-number" aria-hidden="true">01</span>
+        <model-viewer id="chair" src="assets/chair.glb" poster="assets/chair_preview.png"
+          alt="3D model židle s prohnutým dřevěným sedákem a opěradlem, otvorem pro uchopení a pěti dvojitými kolečky."
+          camera-controls disable-pan touch-action="pan-y" loading="eager" reveal="auto"
+          camera-orbit="35deg 72deg 120%" camera-target="0m 0.53m 0m"
+          min-camera-orbit="auto 10deg 50%" max-camera-orbit="auto 105deg 180%"
+          field-of-view="30deg" shadow-intensity="1" shadow-softness="1"
+          exposure="1" interaction-prompt="none" auto-rotate-delay="500" rotation-per-second="18deg">
+          <img slot="poster" class="poster" src="assets/chair_preview.png" alt="Render dřevěné otočné židle">
+          <span slot="pan-target" style="display:none"></span>
+        </model-viewer>
+        <div class="stage-help"><span aria-hidden="true">↔</span> Tažením otáčejte · kolečkem nebo dvěma prsty přibližujte</div>
+        <div class="toolbar" aria-label="Ovládání 3D modelu">
+          <div class="views" aria-label="Přednastavené pohledy">
+            <button type="button" data-view="35deg 72deg 120%" aria-pressed="true">Perspektiva</button>
+            <button type="button" data-view="0deg 85deg 120%" aria-pressed="false">Zepředu</button>
+            <button type="button" data-view="90deg 85deg 120%" aria-pressed="false">Z boku</button>
+            <button type="button" data-view="180deg 85deg 120%" aria-pressed="false">Zezadu</button>
+          </div>
+          <button type="button" class="rotate" id="rotate" aria-pressed="false"><span aria-hidden="true">↻</span> Otáčet</button>
+        </div>
+        <p class="error" id="error" hidden>3D model se nepodařilo zobrazit. Prohlédněte si <a href="assets/chair_preview.png">render</a> nebo si níže stáhněte model.</p>
+      </div>
+    </section>
+    <section class="details" id="detaily" aria-labelledby="details-title">
+      <div class="details-heading"><p class="eyebrow">Anatomie objektu</p><h2 id="details-title">Jednoduchost<br>v detailech.</h2><p>Rekonstrukce podle jedné fotografie. Rozměry jsou orientační a odpovídají vytvořenému modelu.</p></div>
+      <div class="detail-item"><span class="detail-number">01 / Skořepina</span><h3>Souvislá křivka</h3><p>Sedák plynule přechází ve vysoké opěradlo. Kresbu dřeva doplňuje vrstvená hrana a otvor pro uchopení.</p><div class="measurement">45 <span>cm / šířka sedáku</span></div></div>
+      <div class="detail-item"><span class="detail-number">02 / Konstrukce</span><h3>Lehkost kovu</h3><p>Středový sloupek s chromovaným pístem propojuje dřevěnou skořepinu s pěti rameny podnože.</p><div class="measurement">48 <span>cm / výška sedáku</span></div></div>
+      <div class="detail-item"><span class="detail-number">03 / Pohyb</span><h3>Pět opěrných bodů</h3><p>Každé rameno zakončuje dvojité kolečko. Jednotlivé díly zůstávají v Blenderu samostatně upravitelné.</p><div class="measurement">106 <span>cm / celková výška</span></div></div>
+    </section>
+    <section class="downloads" id="soubory" aria-labelledby="download-title">
+      <div><p class="eyebrow">Pokračujte v tvorbě</p><h2 id="download-title">Vezměte si model s sebou.</h2><p>Otevřete scénu v Blenderu nebo použijte univerzální 3D model.</p></div>
+      <div class="download-actions"><a href="assets/chair.blend" download class="button primary">Blender <span>.blend ↓</span></a><a href="assets/chair.glb" download class="button secondary">3D model <span>.glb ↓</span></a></div>
+    </section>
+  </main>
+  <footer><span>Objekt / 001 — Židle</span><span>Vytvořeno v Blenderu · Studie podle fotografie</span><a href="https://github.com/tomasvicar/mlr-agent-lab/tree/gh-pages">Zdroj stránky ↗</a></footer>
+  <noscript><div class="noscript">Pro interaktivní 3D zapněte JavaScript. Render a soubory ke stažení jsou dostupné i bez něj.</div></noscript>
+</body>
+</html>
+
