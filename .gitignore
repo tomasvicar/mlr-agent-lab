@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Environments
+.venv/
+venv/
+.env
+.env.*
+
+# uv
+# (uv.lock IS committed — only the environment is ignored)
+
+# Tooling / editor
+.claude/
+.idea/
+.vscode/
+*.swp
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Data / model artifacts (uncomment once such dirs exist)
+# data/
+# checkpoints/
+# *.onnx
