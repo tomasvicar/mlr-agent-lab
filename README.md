@@ -68,6 +68,7 @@ vs at the top level) belongs in `PLAN.md`.
 
 ## Status
 
-Early scaffolding: documentation and conventions only, no code, no Python
-project initialised, no git repository yet. See
-[`PLAN.md`](PLAN.md) for the ordered next steps.
+Early scaffolding: documentation and conventions only, no code and no Python
+project initialised. Committed on `main` and published at
+[github.com/tomasvicar/mlr-agent-lab](https://github.com/tomasvicar/mlr-agent-lab).
+See [`PLAN.md`](PLAN.md) for the ordered next steps.

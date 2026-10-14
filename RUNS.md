@@ -73,10 +73,35 @@ PLAN.md     current status, 6 ordered next steps, 3 open questions
 RUNS.md     this file
 ```
 
+### Push to GitHub (same run)
+
+`gh auth login` was run interactively by the user, then:
+
+- `gh auth status` → account `tomasvicar`, scopes `repo`, `workflow`,
+  `read:org`, `gist`; https protocol.
+- `gh repo view tomasvicar/mlr-agent-lab` before creating → not found, so the
+  name was free and nothing was overwritten.
+- Payload preview was shown and re-verified before pushing: `git status --short`
+  clean, `git ls-tree -r HEAD` listing the same 6 blobs as the preview.
+- Created with `gh repo create mlr-agent-lab --public --source=. --remote=origin
+  --push` → <https://github.com/tomasvicar/mlr-agent-lab>
+- Verified after pushing: `git ls-remote origin` and
+  `gh api repos/.../commits/main` both report `cb1fd79`;
+  `gh api repos/.../contents` lists exactly the 6 files with byte sizes
+  matching the local `wc -c` output; anonymous `curl` to the GitHub API returns
+  `200` with `"private": false`, confirming public readability without sending
+  credentials.
+- `gh api .../git/trees/main:recursive` returned 404 immediately after the push
+  and succeeded on retry a few seconds later — propagation lag, not a missing
+  file. The `contents` API was the authority used.
+
+Two caveats accepted before going public, both raised with the user first:
+the gateway hostname and model aliases appear in `PLAN.md` and `RUNS.md` (no
+token value anywhere), and `.claude/` is gitignored so the settings file with
+the live `ANTHROPIC_AUTH_TOKEN` was never a candidate for upload.
+
 ### Follow-ups left
 
-- `gh auth login` (interactive — must be run by the user, e.g.
-  `! gh auth login`), then the public repo can be created.
 - Confirm "MLR" = Machine Reading Comprehension; `README.md` and `PLAN.md`
   assume it.
 - `uv init` + dev tooling so the check commands are real.
